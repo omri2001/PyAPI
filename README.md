@@ -12,10 +12,12 @@
 
 ## Installation
 
-You can install **PyAPI** via `pip`:
+clone the repo and follow the commands:
 
 ```bash
-pip install pyapi
+python setup.py sdist bdist_wheel  
+cd ./dist 
+pip install PyAPI-0.0.1-py3-none-any.whl
 ```
 
 ## Redis configuration
