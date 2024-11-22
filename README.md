@@ -15,7 +15,7 @@
 clone the repo and follow the commands:
 
 ```bash
-python setup.py sdist bdist_wheel  
+python old_setup.py sdist bdist_wheel  
 cd ./dist 
 pip install PyAPI-0.0.1-py3-none-any.whl
 ```
@@ -28,15 +28,15 @@ REDIS_DB
 ## Example Usage on server
 task_id = str(uuid.uuid4())\
 task_payload = {TASK_ID: task_id,
-                TASK_DATA: task.task_data.model_dump()}\
+TASK_DATA: task.task_data.model_dump()}\
 results = APIGateway(TASK_QUEUE_CHANNEL).publish_task(GenericRequest(**task_payload), task_id)
 ## Example Usage on worker
 def calculate(task_data: Dict[str, Any]) -> int:\
-    results = task_data['param1'] / task_data['param2']\
-    return results
+results = task_data['param1'] / task_data['param2']\
+return results
 
 
 if __name__ == "__main__":\
-    worker = Worker(TASK_QUEUE_CHANNEL,work_function=calculate)\
-    worker.start_worker()
+worker = Worker(TASK_QUEUE_CHANNEL,work_function=calculate)\
+worker.start_worker()
 

@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "pyapi"
+version = "0.1.0"
+description = "Python SDK for API with queue over redis pubsub"
+authors = ["Ofri Rom <ofrirom@gmail.com>"]
+readme = "README.md"
+packages = [{include = "pyapi", from = "src"}]
+classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",]
+maintainers = ["Omri Assa <omriassa@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+redis = "5.2.0"
+fastapi = "0.112.0"
+uvicorn = "0.30.5"
+pydantic = "2.8.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,7 +1,7 @@
 import json
-from PyAPI.brokers.redis import RedisClient
-from PyAPI.common.consts import DATA, TYPE, MESSAGE
-from PyAPI.common.generic_models import GenericResults, GenericRequest
+from src.pyapi.brokers.redis import RedisClient
+from src.pyapi.common.consts import DATA, TYPE, MESSAGE
+from src.pyapi.common.generic_models import GenericResults, GenericRequest
 
 
 class APIGateway:

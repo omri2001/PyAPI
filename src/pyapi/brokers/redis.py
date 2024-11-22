@@ -2,7 +2,7 @@ import os
 import json
 import redis
 from typing import Union
-from PyAPI.common.generic_models import GenericRequest, GenericResults
+from src.pyapi.common.generic_models import GenericRequest, GenericResults
 
 
 class RedisClient:
@@ -10,9 +10,9 @@ class RedisClient:
     def __init__(self, host: str = None, port: int = None, db: int = None):
         """
             Initialize the RedisClient with the host port and db
-            :param host: host str
-            :param port: port int
-            :param db: db int
+            :param host: host str | env: REDIS_HOST
+            :param port: port int | env: REDIS_PORT
+            :param db: db int | env: REDIS_DB
         """
         self.redis_client = redis.Redis(host=os.getenv("REDIS_HOST", default=host),
                                         port=os.getenv("REDIS_PORT", default=port),

@@ -1,8 +1,8 @@
 import json
 from typing import Dict, Any, Tuple, Callable
-from PyAPI.brokers.redis import RedisClient
-from PyAPI.common.generic_models import GenericResults
-from PyAPI.common.consts import DATA, TASK_ID, TASK_DATA, TYPE, MESSAGE
+from src.pyapi.brokers.redis import RedisClient
+from src.pyapi.common.generic_models import GenericResults
+from src.pyapi.common.consts import DATA, TASK_ID, TASK_DATA, TYPE, MESSAGE
 
 
 class Worker:
